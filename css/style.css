@@ -1339,3 +1339,31 @@ footer {
     font-size: 0.95rem;
     color: #fff;
 }
+/* Consolidação dos estilos para .nova-section */
+.nova-section {
+    background: #fff;
+    padding-top: 0px; /* Reduzi o padding superior de 60px para 20px. Você pode ajustar esse valor. */
+    padding-right: 20px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    text-align: center;
+    position: relative;
+    overflow: visible; /* Ou hidden, dependendo do efeito que quer para as imagens de colagem */
+    display: block; /* Garante que se comporte como um bloco */
+}
+
+/* Certifique-se que nova-section-inner gerencia o flex das colagens e do texto da missão */
+.nova-section-inner {
+    display: flex;
+    flex-direction: row; /* Para as imagens e o texto da missão ficarem lado a lado */
+    justify-content: center;
+    align-items: stretch;
+    gap: 0; /* Ou um valor para espaço entre os itens */
+    max-width: 1140px; /* Ou o que você precisa */
+    margin: 0 auto; /* Para centralizar o bloco interno */
+    width: 100%;
+    position: relative;
+}
+
+/* Se você tem CSS para `.nova-content` que está dentro de `.nova-section-inner`,
+   certifique-se de que ele não está competindo com `.missao-modern` para o texto principal. */

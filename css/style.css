@@ -354,7 +354,189 @@ footer { background: #181818; color: #fff; padding: 40px 0 20px 0; margin-top: 6
     .section-title { font-size: 1.8rem; }
     .missao-modern { font-size: 1rem; }
     .missao-modern .missao-destaque { font-size: 1.4em; }
+.hero {
+    background: linear-gradient(120deg, #111 70%, #ffd700 100%);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px 60px 20px;
+}
+.hero h1 {
+    font-size: 2.7rem;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+.hero .btn {
+    font-size: 1.2rem;
+    padding: 14px 36px;
+}
 
+main {
+    background: #fff;
+    padding-bottom: 40px;
+}
+
+section.highlight {
+    background: #ffd700;
+    color: #111;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 auto 30px auto;
+    padding: 40px 20px 30px 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 900px;
+    flex-wrap: wrap;
+}
+.card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 30px 24px;
+    flex: 1 1 300px;
+    min-width: 260px;
+    max-width: 400px;
+    text-align: center;
+}
+.card h3 {
+    color: #111;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+.card .btn {
+    margin-top: 18px;
+}
+
+.banner {
+    background: linear-gradient(90deg, #ffd700 60%, #fff 100%);
+    color: #111;
+    text-align: center;
+    padding: 50px 20px 40px 20px;
+    margin: 40px auto 0 auto;
+    border-radius: 10px;
+    max-width: 900px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.contato {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    text-align: center;
+}
+
+.social {
+    margin: 20px 0 0 0;
+}
+.social a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #ffd700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.social a:hover {
+    color: #111;
+}
+
+.btn {
+    background: #ffd700;
+    color: #111;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 0;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, color 0.2s;
+}
+.btn:hover {
+    background: #111;
+    color: #ffd700;
+}
+
+footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+.footer-links, .footer-social {
+    font-size: 1rem;
+    color: #ffd700;
+}
+.footer-links a, .footer-social a {
+    color: #ffd700;
+    text-decoration: none;
+    margin: 0 4px;
+    transition: color 0.2s;
+}
+.footer-links a:hover, .footer-social a:hover {
+    color: #fff;
+}
+.footer-copy {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #fff;
+}
+/* Consolidação dos estilos para .nova-section */
+.nova-section {
+    background: #fff;
+    padding-top: 0px; /* Reduzi o padding superior de 60px para 20px. Você pode ajustar esse valor. */
+    padding-right: 20px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    text-align: center;
+    position: relative;
+    overflow: visible; /* Ou hidden, dependendo do efeito que quer para as imagens de colagem */
+    display: block; /* Garante que se comporte como um bloco */
+}
+
+/* Certifique-se que nova-section-inner gerencia o flex das colagens e do texto da missão */
+.nova-section-inner {
+    display: flex;
+    flex-direction: row; /* Para as imagens e o texto da missão ficarem lado a lado */
+    justify-content: center;
+    align-items: stretch;
+    gap: 0; /* Ou um valor para espaço entre os itens */
+    max-width: 1140px; /* Ou o que você precisa */
+    margin: 0 auto; /* Para centralizar o bloco interno */
+    width: 100%;
+    position: relative;
+}
+
+/* Se você tem CSS para `.nova-content` que está dentro de `.nova-section-inner`,
+   certifique-se de que ele não está competindo com `.missao-modern` para o texto principal. */
     .somos-section h2, .ministerios-section h2 { font-size: 2rem; }
     .somos-section, .ministerios-section { padding: 60px 0; }
 }

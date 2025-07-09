@@ -28,13 +28,22 @@ body {
     overflow-x: hidden; /* Evita scroll horizontal */
 }
 
-/* Container principal para limitar a largura do conteúdo */
 .site-container {
     max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+/* Título genérico para seções */
+.section-title {
+    font-size: 1.15rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #222;
+    margin: 0;
+    text-align: center;
 }
 
 /* ==========================================================================
@@ -61,9 +70,7 @@ body {
     padding: 0 20px;
 }
 
-.navbar-logo a {
-    text-decoration: none;
-}
+.navbar-logo a { text-decoration: none; }
 
 .navbar-logo .logo-text {
     font-family: 'Inter', 'Poppins', 'Helvetica Neue', Arial, sans-serif;
@@ -83,9 +90,7 @@ body {
     flex-grow: 1;
 }
 
-#menu-hamburger-toggle {
-    display: none;
-}
+#menu-hamburger-toggle { display: none; }
 
 .hamburger-icon {
     display: flex;
@@ -98,11 +103,7 @@ body {
 }
 
 .hamburger-icon span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background: #222;
-    border-radius: 2px;
+    display: block; width: 100%; height: 3px; background: #222; border-radius: 2px;
 }
 
 .navbar-content-wrapper {
@@ -124,33 +125,18 @@ body {
 }
 
 .navbar-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 15px;
+    list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;
+    align-items: center; width: 100%; gap: 15px;
 }
 
 .navbar-menu > li > a {
-    color: #222;
-    font-size: 1.05rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    padding: 8px 0;
-    transition: color 0.2s;
+    color: #222; font-size: 1.05rem; font-weight: 700; text-transform: uppercase;
+    text-decoration: none; letter-spacing: 0.04em; padding: 8px 0; transition: color 0.2s;
 }
 .navbar-menu > li > a:hover { color: #ae3d3d; }
 
 .navbar-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    display: flex; flex-direction: column; align-items: center; gap: 15px;
 }
 .navbar-social { display: flex; gap: 10px; }
 .icon-social { color: #222; }
@@ -159,32 +145,17 @@ body {
 
 .has-dropdown { position: relative; }
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 160px;
-    background: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-    border-radius: 8px;
-    padding: 8px;
-    list-style: none;
-    margin-top: 10px;
-    z-index: 1010;
+    display: none; position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%); min-width: 160px; background: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07); border-radius: 8px;
+    padding: 8px; list-style: none; margin-top: 10px; z-index: 1010;
 }
 .has-dropdown:hover .dropdown-menu { display: block; }
 .dropdown-menu a {
-    display: block;
-    color: #222;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 6px;
-    white-space: nowrap;
-    transition: background 0.18s;
+    display: block; color: #222; padding: 10px 15px; text-decoration: none;
+    border-radius: 6px; white-space: nowrap; transition: background 0.18s;
 }
 .dropdown-menu a:hover { background: #f3f3f3; color: #ae3d3d; }
-
 
 /* ==========================================================================
    3. SEÇÕES DE CONTEÚDO
@@ -192,51 +163,29 @@ body {
 
 /* --- Hero Section --- */
 .hero-section {
-    min-height: 90vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-    overflow: hidden;
+    min-height: 90vh; width: 100%; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 40px 20px; overflow: hidden;
 }
 
 .hero-bg-img {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0.55;
-    z-index: -1;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center; opacity: 0.55; z-index: -1;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #222;
-    margin: 0 0 18px 0;
+    font-size: 4rem; font-weight: 900; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #222; margin: 0 0 18px 0;
 }
 
 .hero-content h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: lowercase;
-    color: #ae3d3d;
-    margin: 0;
+    font-size: 1.5rem; font-weight: 400; letter-spacing: 0.08em;
+    text-transform: lowercase; color: #ae3d3d; margin: 0;
 }
+*98
 
-/* --- Nova Seção (Missão) --- */
-.nova-section {
-    background: #fff;
-    padding: 80px 0;
-    overflow: visible;
-}
+/* --- Nova Seção (Missão) COM ESTILOS CORRIGIDOS --- */
+.nova-section { background: #fff; padding: 80px 0; overflow: visible; }
 
 .nova-section-inner {
     display: flex;
@@ -246,21 +195,32 @@ body {
     gap: 0;
 }
 
+/* O container do texto e título */
+.missao-content {
+    text-align: center; /* << Abordagem mais simples: Apenas centraliza o texto */
+    flex-shrink: 0;
+    max-width: 520px;
+    padding: 0 20px;
+}
+
+/* O título, com margem para separar do parágrafo */
+.missao-content .section-title {
+    margin-bottom: 20px; /* << Usa margem para espaçamento, mais seguro que gap aqui */
+}
+
 .missao-modern {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.25rem;
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
-    margin: 0;
-    flex-shrink: 0;
-    max-width: 520px;
-    padding: 0 20px;
+    margin: 10px;
+    padding: 0;
 }
 
 .missao-modern .missao-destaque {
     font-size: 1.6em;
-    font-weight: 800;
+    font-weight: 1000;
     display: inline-block;
     line-height: 1.1;
 }
@@ -270,17 +230,13 @@ body {
     height: 350px;
     position: relative;
 }
-.broken-collage-left { margin-right: -30px; }
-.broken-collage-right { margin-left: -30px; }
+.broken-collage-left { margin-right: 100px; }
+.broken-collage-right { margin-left: 100px; }
 
 .broken-collage .collage-img {
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 22px;
-    box-shadow: 0 6px 32px rgba(0,0,0,0.13);
-    border: 4px solid #fff;
+    position: absolute; width: 160px; height: 160px;
+    object-fit: cover; border-radius: 22px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.13); border: 4px solid #fff;
 }
 .broken-collage-left .img1 { top: 0; left: 0; z-index: 2; transform: rotate(-8deg); }
 .broken-collage-left .img2 { top: 90px; left: 20px; z-index: 3; transform: rotate(7deg); }
@@ -289,86 +245,52 @@ body {
 .broken-collage-right .img5 { top: 90px; right: 20px; z-index: 3; transform: rotate(-6deg); }
 .broken-collage-right .img6 { top: 180px; right: -10px; z-index: 1; transform: rotate(5deg); }
 
-
 /* --- Seção de Vídeo --- */
-.video-section {
-    padding: 60px 0;
-    background: #f1f1f1;
-}
+.video-section { padding: 60px 0; background: #f1f1f1; }
 .video-wrapper {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: #e0e0e0;
-    border-radius: 16px;
-    overflow: hidden;
+    width: 100%; aspect-ratio: 16/9; background: #e0e0e0;
+    border-radius: 16px; overflow: hidden;
     box-shadow: 0 2px 16px rgba(0,0,0,0.07);
 }
-.video-wrapper iframe {
-    width: 100%; height: 100%; border: none;
-}
+.video-wrapper iframe { width: 100%; height: 100%; border: none; }
 
 /* --- Seções Somos e Ministérios --- */
-.somos-section, .ministerios-section {
-    padding: 80px 0;
-    text-align: center;
-}
+.somos-section, .ministerios-section { padding: 80px 0; text-align: center; }
 .ministerios-section { background: #faf9f7; }
 
 .somos-section h2, .ministerios-section h2 {
-    font-size: 2.7rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin: 0 0 18px 0;
+    font-size: 2.7rem; font-weight: 900; text-transform: uppercase; margin: 0 0 18px 0;
 }
 .somos-section .destaque { color: #ae3d3d; }
 .somos-section p { font-size: 1.5rem; margin-bottom: 32px; }
 
 .somos-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; }
 .icon-placeholder {
-    width: 80px; height: 80px;
-    background: #f3f3f3;
-    border-radius: 50%;
+    width: 80px; height: 80px; background: #f3f3f3; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    color: #ae3d3d;
-    font-weight: 700;
+    color: #ae3d3d; font-weight: 700;
 }
 
 .ministerios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 32px;
-    margin-top: 40px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 32px; margin-top: 40px;
 }
 .ministerio-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    padding: 36px 12px;
+    background: #fff; border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 36px 12px;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
 }
-.ministerio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 24px rgba(174,61,61,0.13);
-}
+.ministerio-card:hover { transform: translateY(-5px); box-shadow: 0 6px 24px rgba(174,61,61,0.13); }
 .ministerio-card .icon-placeholder { margin-bottom: 18px; }
 .ministerio-card span { font-weight: 600; text-transform: uppercase; }
 
 /* ==========================================================================
    4. FOOTER (RODAPÉ)
    ========================================================================== */
-footer {
-    background: #181818;
-    color: #fff;
-    padding: 40px 0 20px 0;
-    margin-top: 60px;
-}
+footer { background: #181818; color: #fff; padding: 40px 0 20px 0; margin-top: 60px; }
 .footer-content { text-align: center; }
-.footer-logo {
-    font-size: 1.7rem; font-weight: 900; text-transform: uppercase;
-    margin-bottom: 10px;
-}
+.footer-logo { font-size: 1.7rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; }
 .footer-social { margin: 18px 0; }
 .footer-social a { color: #fff; font-size: 1rem; margin: 0 10px; text-decoration: none; }
 .footer-social a:hover { color: #ae3d3d; }
@@ -383,15 +305,8 @@ footer {
 @media (min-width: 901px) {
     .hamburger-icon { display: none; }
     .navbar-content-wrapper {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        align-items: center;
-        width: auto;
-        background: none;
-        box-shadow: none;
-        padding: 0;
-        gap: 38px;
+        display: flex; position: static; flex-direction: row; align-items: center;
+        width: auto; background: none; box-shadow: none; padding: 0; gap: 38px;
     }
     .navbar-menu { flex-direction: row; gap: 28px; }
     .navbar-right { flex-direction: row; gap: 24px; }
@@ -401,11 +316,20 @@ footer {
 @media (max-width: 900px) {
     body { padding-top: 70px; }
     .main-navbar, .navbar-content-wrapper { height: 70px; top: 70px;}
+
     .hero-content h1 { font-size: 2.5rem; }
     .hero-content h2 { font-size: 1.2rem; }
-
-    .nova-section-inner { flex-direction: column; gap: 40px; }
-    .broken-collage { display: none; } /* Opcional: esconder colagens no mobile para simplificar */
+    
+    /* Na versão mobile, as colagens laterais são escondidas e o conteúdo da missão fica centralizado */
+    .nova-section-inner {
+        flex-direction: column;
+        gap: 0; /* Remove o gap para o conteúdo ficar junto */
+    }
+    .broken-collage {
+        display: none;
+    }
+    
+    .section-title { font-size: 1.8rem; }
     .missao-modern { font-size: 1rem; }
     .missao-modern .missao-destaque { font-size: 1.4em; }
 

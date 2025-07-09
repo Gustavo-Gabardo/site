@@ -163,9 +163,18 @@ body {
 
 /* --- Hero Section --- */
 .hero-section {
-    min-height: 90vh; width: 100%; position: relative;
-    display: flex; align-items: center; justify-content: center;
-    text-align: center; padding: 40px 20px; overflow: hidden;
+    min-height: 90vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 0;
+    overflow: hidden;
+    color: #fff;
+    background: url('css/WhatsApp Image 2025-06-09 at 09.27.05.jpeg') center center/cover no-repeat;
+    background-attachment: fixed;
 }
 
 .hero-bg-img {
@@ -174,15 +183,28 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 4rem; font-weight: 900; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #222; margin: 0 0 18px 0;
+position: relative;
+font-family: 'Inter', sans-serif;
+font-size: 4rem;
+font-weight: 900;
+letter-spacing: 0;
+text-transform: capitalize;
+color: #000000;
+margin: 0 0 0px 0;
+text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+text-align: left; /* Adicionando esta linha para alinhar o texto à esquerda */
 }
 
+
 .hero-content h2 {
-    font-size: 1.5rem; font-weight: 400; letter-spacing: 0.08em;
-    text-transform: lowercase; color: #ae3d3d; margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    color: #fff;
+    margin: 0;
 }
-*98
+
 
 /* --- Nova Seção (Missão) COM ESTILOS CORRIGIDOS --- */
 .nova-section { background: #fff; padding: 80px 0; overflow: visible; }

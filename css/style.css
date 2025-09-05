@@ -293,7 +293,7 @@ body {
 .tabs-container {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 60px;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -302,38 +302,55 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 12px;
     width: 100%;
+    border-bottom: 1px solid #eee;
 }
 
 .tab-btn {
     text-align: center;
-    padding: 16px 24px;
-    background: #f8f9fa;
-    border: none;
-    border-radius: 12px;
+    padding: 18px 32px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 0;
     font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #555;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #777;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
     flex: 1;
     min-width: 200px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #ae3d3d;
+    transition: width 0.3s ease;
+}
+
+.tab-btn:hover::after {
+    width: 80%;
 }
 
 .tab-btn.active {
-    background: #ae3d3d;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(174,61,61,0.2);
+    color: #ae3d3d;
+    font-weight: 800;
 }
 
-.tab-icon {
-    font-size: 1.4rem;
+.tab-btn.active::after {
+    width: 80%;
 }
 
 .tab-content {
@@ -384,12 +401,23 @@ body {
 @media (max-width: 768px) {
     .tabs-menu {
         flex-direction: column;
+        border-bottom: none;
     }
     
     .tab-btn {
         width: 100%;
-        padding: 12px 16px;
+        padding: 16px;
         min-width: 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .tab-btn::after {
+        display: none;
+    }
+
+    .tab-btn.active {
+        background: #ae3d3d;
+        color: #fff;
     }
 }
 

@@ -10,7 +10,9 @@
     <header class="main-navbar">
         <div class="main-navbar-inner">
             <div class="navbar-logo">
-                <span class="logo-text">CASA<br>ATOS</span>
+                <a href="#hero">
+                    <img src="img/logo-principal.png" alt="Casa Atos" class="navbar-logo-img">
+                </a>
             </div>
 
             <input type="checkbox" id="menu-hamburger-toggle" />
@@ -47,12 +49,17 @@
     <main>
     <section class="hero-section" id="hero">
     <div class="hero-content">
-        <h1>
-            UMA IGREJA<br>
-            BÍBLICA,<br>
-            ACOLHEDORA E<br>
-            QUE SE ENVOLVE
-        </h1>
+        <div class="hero-content-wrapper">
+            <h1>
+                UMA IGREJA<br>
+                BÍBLICA,<br>
+                ACOLHEDORA E<br>
+                QUE SE ENVOLVE
+            </h1>
+            <div class="hero-logo">
+                <img src="img/solas-casa.png" alt="Logo Casa Atos" class="logo-principal">
+            </div>
+        </div>
     </div>
 </section>
 
@@ -81,7 +88,13 @@
 
         <section class="modo-section">
             <div class="site-container">
-                <h2 class="section-title modo-title">NOSSO MODO DE SER IGREJA</h2>
+                <div class="modo-bg-wrapper">
+                    <img src="img/vem-ser-igreja.jpg" alt="Modo de ser igreja" class="modo-bg-img">
+                    <div class="modo-bg-text">
+                        <h2 class="section-title modo-title">NOSSO MODO DE SER IGREJA</h2>
+                    </div>
+                    </div>
+                </div>
                 
                 <div class="tabs-container">
                     <!-- Abas horizontais -->
@@ -98,27 +111,54 @@
                             <p>Nossos cultos são momentos especiais de adoração, onde experimentamos a presença de Deus através 
                             de louvores vibrantes e mensagens transformadoras da Palavra. Um ambiente acolhedor onde todos são 
                             bem-vindos para encontrar com Jesus.</p>
-                            <div class="tab-image">
-                                <img src="css/culto-imagem.jpeg" alt="Momento de culto" loading="lazy">
-                            </div>
+                           
                         </div>
                         
                         <div class="tab-pane" id="casas">
                             <h3>DE CASA EM CASA</h3>
                             <p>Seguindo o modelo da igreja primitiva, nos reunimos em pequenos grupos nas casas. São momentos de 
                             comunhão, compartilhamento e crescimento mútuo, onde fortalecemos nossos laços como família da fé.</p>
-                            <div class="tab-image">
-                                <img src="css/casa-imagem.jpeg" alt="Encontro nas casas" loading="lazy">
-                            </div>
+                            
                         </div>
                         
                         <div class="tab-pane" id="discipulado">
                             <h3>DISCIPULADO</h3>
                             <p>Acreditamos no poder do discipulado um a um, onde cada pessoa é acompanhada e mentoreada em sua 
                             jornada de fé. Investimos tempo em relacionamentos que geram crescimento e maturidade espiritual.</p>
-                            <div class="tab-image">
-                                <img src="css/discipulado-imagem.jpg" alt="Momento de discipulado" loading="lazy">
-                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pastores-section">
+            <div class="site-container">
+                <h2 class="section-title">LIDERANÇA PASTORAL</h2>
+                <div class="pastores-wrapper">
+                    <div class="pastor-img-container esquerda">
+                        <img src="img/PASTORA.jpeg" alt="Pastora Fernanda" loading="lazy">
+                        <div class="pastor-overlay"></div>
+                        <div class="pastor-nome">
+                            <h3>Pastora Fernanda</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="pastores-content">
+                        <div class="pastores-citacao">
+                            <span class="citacao-marca">"</span>
+                            <p>Unidos em propósito e visão, servimos a Deus com amor e dedicação, trabalhando para edificar a igreja e cuidar de cada membro com atenção e zelo.</p>
+                        </div>
+                        <div class="pastores-desc">
+                            <p>Nossa igreja é abençoada com um casal pastoral que dedica suas vidas ao Reino de Deus. Através de seus ministérios complementares, eles nos guiam no caminho da Palavra e nos inspiram a viver uma vida cristã autêntica.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pastor-img-container direita">
+                        <img src="img/PASTOR.jpeg" alt="Pastor Junior" loading="lazy">
+                        <div class="pastor-overlay"></div>
+                        <div class="pastor-nome">
+                            <h3>Pastor Junior</h3>
                         </div>
                     </div>
                 </div>
@@ -128,7 +168,31 @@
         <section class="video-section">
             <div class="site-container">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/2QnQ9F1HkXw?autoplay=1&mute=1&loop=1&playlist=2QnQ9F1HkXw" title="Vídeo Onda Dura" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe width="1344" height="756" src="https://www.youtube.com/embed/1Kj3ieV1kSU" title="Projeto Casa | Adorarei (Ao Vivo) #AdoraçãonaCasa #CasaAtos #Adorarei  @oprojetocasa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <section class="eventos-section">
+            <div class="site-container">
+                <h2 class="section-title">PRÓXIMOS EVENTOS</h2>
+                <div class="eventos-grid">
+                    <div class="evento-card evento-destaque">
+                        <div class="evento-imagem">
+                            <img src="img/EKKLESIA DIAS.jpeg" alt="Conferência Ekklesia">
+                            <div class="evento-data">
+                                <span class="dias">12-14</span>
+                                <span class="mes">SET</span>
+                            </div>
+                        </div>
+                        <div class="evento-conteudo">
+                            <h3>CONFERÊNCIA EKKLESIA</h3>
+                            <p class="evento-descricao">Um tempo de extrema importância para nossa igreja. Falaremos sobre pontos de extrema valia para nossa vida como igreja dentro da atualidade a qual nos encontramos.</p>
+                            <div class="evento-info">
+                                <span class="evento-horario">20:00</span>
+                                <span class="evento-local">Casa Atos</span>
+                            </div>
+                            <a href="https://wa.me/554195248175?text=Olá%2C%20quero%20saber%20mais%20sobre%20a%20conferência%20EKKLESIA." class="evento-btn" target="_blank" rel="noopener noreferrer">INSCREVA-SE</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

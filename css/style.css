@@ -1,3 +1,38 @@
+/* Modo de ser igreja - imagem de fundo com blur e texto sobreposto */
+.modo-bg-wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 140px;
+    margin-bottom: 2rem;
+}
+.modo-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px);
+    display: block;
+}
+.modo-bg-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.modo-bg-text .modo-title {
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
 /* ==========================================================================
    SUMÁRIO
    ==========================================================================
@@ -23,8 +58,8 @@ body {
     font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 80px 0 0 0; /* Espaçamento para o header fixo */
-    background: #fff;
-    color: #222;
+    background: #111;
+    color: #fff;
     overflow-x: hidden; /* Evita scroll horizontal */
 }
 
@@ -41,9 +76,14 @@ body {
     font-size: 1.15rem;
     font-weight: 900;
     text-transform: uppercase;
-    color: #222;
+    color: #fff;
     margin: 0;
     text-align: center;
+}
+
+/* Título específico para seção missão (fundo branco) */
+.nova-section .section-title {
+    color: #222;
 }
 
 /* ==========================================================================
@@ -55,9 +95,9 @@ body {
     left: 0;
     width: 100%;
     height: 80px;
-    background: #fff;
+    background: #222;
     z-index: 1000;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 12px rgba(255,255,255,0.04);
 }
 
 .main-navbar-inner {
@@ -70,17 +110,21 @@ body {
     padding: 0 20px;
 }
 
-.navbar-logo a { text-decoration: none; }
+.navbar-logo a { 
+    text-decoration: none; 
+    display: flex;
+    align-items: center;
+}
 
-.navbar-logo .logo-text {
-    font-family: 'Inter', 'Poppins', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 2.1rem;
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: 0.08em;
-    color: #222;
-    text-transform: uppercase;
-    flex-shrink: 0;
+.navbar-logo-img {
+    height: 115px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.navbar-logo-img:hover {
+    transform: scale(1.05);
 }
 
 .navbar-right-content {
@@ -103,7 +147,7 @@ body {
 }
 
 .hamburger-icon span {
-    display: block; width: 100%; height: 3px; background: #222; border-radius: 2px;
+    display: block; width: 100%; height: 3px; background: #fff; border-radius: 2px;
 }
 
 .navbar-content-wrapper {
@@ -112,11 +156,11 @@ body {
     top: 80px;
     left: 0;
     width: 100%;
-    background: #fff;
+    background: #222;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(255,255,255,0.05);
     gap: 20px;
 }
 
@@ -130,32 +174,32 @@ body {
 }
 
 .navbar-menu > li > a {
-    color: #222; font-size: 1.05rem; font-weight: 700; text-transform: uppercase;
+    color: #fff; font-size: 1.05rem; font-weight: 700; text-transform: uppercase;
     text-decoration: none; letter-spacing: 0.04em; padding: 8px 0; transition: color 0.2s;
 }
-.navbar-menu > li > a:hover { color: #ae3d3d; }
+.navbar-menu > li > a:hover { color: rgb(252, 176, 55); }
 
 .navbar-right {
     display: flex; flex-direction: column; align-items: center; gap: 15px;
 }
 .navbar-social { display: flex; gap: 10px; }
-.icon-social { color: #222; }
-.icon-social:hover { color: #ae3d3d; }
+.icon-social { color: #fff; }
+.icon-social:hover { color: rgb(252, 176, 55); }
 .icon-social svg { vertical-align: middle; }
 
 .has-dropdown { position: relative; }
 .dropdown-menu {
     display: none; position: absolute; top: 100%; left: 50%;
-    transform: translateX(-50%); min-width: 160px; background: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.07); border-radius: 8px;
+    transform: translateX(-50%); min-width: 160px; background: #333;
+    box-shadow: 0 4px 16px rgba(255,255,255,0.07); border-radius: 8px;
     padding: 8px; list-style: none; margin-top: 10px; z-index: 1010;
 }
 .has-dropdown:hover .dropdown-menu { display: block; }
 .dropdown-menu a {
-    display: block; color: #222; padding: 10px 15px; text-decoration: none;
+    display: block; color: #fff; padding: 10px 15px; text-decoration: none;
     border-radius: 6px; white-space: nowrap; transition: background 0.18s;
 }
-.dropdown-menu a:hover { background: #f3f3f3; color: #ae3d3d; }
+.dropdown-menu a:hover { background: #444; color: rgb(252, 176, 55); }
 
 /* ==========================================================================
    3. SEÇÕES DE CONTEÚDO
@@ -174,13 +218,12 @@ body {
     /* Usamos display:flex e align-items para centralizar o conteúdo verticalmente de forma robusta */
     display: flex;
     align-items: center;
-    padding: 80px 0;
 
     overflow: hidden;
     color: #fff;
     
     /* A imagem de fundo é definida APENAS AQUI */
-    background: url("../css/WhatsApp Image 2025-06-09 at 09.27.05.jpeg") center center/cover no-repeat;
+    /* background: url("../css/WhatsApp Image 2025-06-09 at 09.27.05.jpeg") center center/cover no-repeat; */
     background-attachment: fixed;
 }
 
@@ -192,7 +235,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+  
 }
 
 /* Container que alinha o conteúdo com o header */
@@ -218,8 +261,32 @@ body {
     text-align: left;
 }
 
+/* Wrapper para título e logo lado a lado */
+.hero-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Estilo da logo principal no hero */
+.hero-logo {
+    flex-shrink: 0;
+}
+
+.logo-principal {
+    width: 660px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.6));
+}
+
 /* --- Nova Seção (Missão) COM ESTILOS CORRIGIDOS --- */
-.nova-section { background: #fff; padding: 80px 0; overflow: visible; }
+.nova-section { 
+    background: linear-gradient(rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0.8) 8%, rgba(255, 255, 255, 0.6) 15%, #ababab 20%, #ababab 80%, rgba(255, 255, 255, 0.6) 85%, rgba(17, 17, 17, 0.8) 92%, rgba(17, 17, 17, 1) 100%);
+    padding: 80px 0; 
+    overflow: visible; 
+}
 
 .nova-section-inner {
     display: flex;
@@ -250,6 +317,7 @@ body {
     text-align: left; /* <--- CORRIGIDO */
     margin: 10px;
     padding: 10;
+    color: #222;
 }
 
 
@@ -282,8 +350,18 @@ body {
 
 /* --- Seção Modo de Ser Igreja --- */
 .modo-section {
-    padding: 80px 0;
-    background: #fff;
+    
+    background: linear-gradient(to bottom, 
+        rgba(17,17,17,1) 0%, 
+        rgba(17,17,17,0.9) 10%, 
+        rgba(26,26,26,0.8) 20%, 
+        #1a1a1a 30%, 
+        #1a1a1a 70%, 
+        rgba(26,26,26,0.8) 80%, 
+        rgba(17,17,17,0.9) 90%, 
+        rgba(17,17,17,1) 100%
+    );
+    padding-bottom: 20px;
 }
 
 .modo-title {
@@ -303,7 +381,7 @@ body {
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #444;
 }
 
 .tab-btn {
@@ -316,7 +394,7 @@ body {
     font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 0.1em;
-    color: #777;
+    color: #aaa;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -336,7 +414,7 @@ body {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: #ae3d3d;
+    background: rgb(252, 176, 55);
     transition: width 0.3s ease;
 }
 
@@ -345,7 +423,7 @@ body {
 }
 
 .tab-btn.active {
-    color: #ae3d3d;
+    color: rgb(252, 176, 55);
     font-weight: 800;
 }
 
@@ -355,7 +433,7 @@ body {
 
 .tab-content {
     flex: 1;
-    background: #fff;
+    background: #222;
     padding: 20px;
     border-radius: 12px;
 }
@@ -374,14 +452,14 @@ body {
 .tab-pane h3 {
     font-size: 1.8rem;
     font-weight: 800;
-    color: #222;
+    color: #fff;
     margin-bottom: 20px;
 }
 
 .tab-pane p {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #444;
+    color: #ccc;
     margin-bottom: 30px;
 }
 
@@ -408,7 +486,7 @@ body {
         width: 100%;
         padding: 16px;
         min-width: 0;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #444;
     }
 
     .tab-btn::after {
@@ -416,13 +494,206 @@ body {
     }
 
     .tab-btn.active {
-        background: #ae3d3d;
+        background: rgb(252, 176, 55);
         color: #fff;
     }
 }
 
+/* --- Seção Pastores --- */
+.pastores-section {
+    background: linear-gradient(
+        rgba(17, 17, 17, 1) 0%, 
+        rgba(17, 17, 17, 0.95) 10%, 
+        rgba(17, 17, 17, 0.9) 20%, 
+        rgba(17, 17, 17, 0.85) 100%
+    );
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.pastores-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, 
+        transparent 0%, 
+        rgb(252, 176, 55) 50%, 
+        transparent 100%
+    );
+}
+
+.pastores-section .section-title {
+    color: rgb(252, 176, 55);
+    font-size: 2.5rem;
+    margin-bottom: 80px;
+    position: relative;
+    letter-spacing: 0.2em;
+}
+
+.pastores-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pastor-img-container {
+    flex: 0 0 350px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pastor-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pastor-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(17, 17, 17, 0.3) 50%,
+        rgba(17, 17, 17, 0.9) 100%
+    );
+}
+
+.pastor-nome {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.pastor-nome h3 {
+    color: rgb(252, 176, 55);
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pastor-img-container:hover img {
+    transform: scale(1.05);
+}
+
+.pastor-img-container:hover .pastor-nome {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pastores-content {
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.pastores-citacao {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.citacao-marca {
+    font-size: 120px;
+    line-height: 0;
+    position: absolute;
+    top: -20px;
+    left: -40px;
+    color: rgba(252, 176, 55, 0.2);
+    font-family: Georgia, serif;
+}
+
+.pastores-citacao p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #fff;
+    font-style: italic;
+    position: relative;
+}
+
+.pastores-desc p {
+    color: #aaa;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+@media (max-width: 1200px) {
+    .pastor-img-container {
+        flex: 0 0 280px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 900px) {
+    .pastores-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .pastor-img-container {
+        flex: 0 0 250px;
+        height: 350px;
+        width: 250px;
+    }
+    
+    .pastor-img-container.direita {
+        order: 3;
+    }
+    
+    .pastores-content {
+        order: 2;
+    }
+    
+    .citacao-marca {
+        font-size: 80px;
+        top: -10px;
+        left: -20px;
+    }
+    
+    .pastores-citacao p {
+        font-size: 1.3rem;
+    }
+    
+    .pastores-section .section-title {
+        font-size: 2rem;
+        margin-bottom: 60px;
+    }
+}
+
 /* --- Seção de Vídeo --- */
-.video-section { padding: 60px 0; background: #f1f1f1; }
+.video-section { 
+    padding: 60px 0; 
+    background: linear-gradient(to bottom, 
+        rgba(17,17,17,1) 0%, 
+        rgba(17,17,17,0.9) 15%, 
+        rgba(51,51,51,0.8) 25%, 
+        #333 35%, 
+        #333 65%, 
+        rgba(51,51,51,0.8) 75%, 
+        rgba(17,17,17,0.9) 85%, 
+        rgba(17,17,17,1) 100%
+    );
+}
 .video-wrapper {
     width: 100%; aspect-ratio: 16/9; background: #e0e0e0;
     border-radius: 16px; overflow: hidden;
@@ -430,21 +701,204 @@ body {
 }
 .video-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-/* --- Seções Somos e Ministérios --- */
-.somos-section, .ministerios-section { padding: 80px 0; text-align: center; }
-.ministerios-section { background: #faf9f7; }
+/* --- Seção de Eventos --- */
+.eventos-section {
+    padding: 80px 0;
+    background: linear-gradient(to bottom, 
+        rgba(17,17,17,1) 0%, 
+        rgba(17,17,17,0.9) 15%, 
+        rgba(26,26,26,0.8) 25%, 
+        #1a1a1a 35%, 
+        #1a1a1a 65%, 
+        rgba(26,26,26,0.8) 75%, 
+        rgba(17,17,17,0.9) 85%, 
+        rgba(17,17,17,1) 100%
+    );
+}
+
+.eventos-grid {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.evento-card {
+    grid-column: 2; /* Centraliza o card na coluna do meio */
+    max-width: 320px;
+    justify-self: center;
+}
+
+.evento-card {
+    background: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 25px rgba(252, 176, 55, 0.2);
+}
+
+.evento-imagem {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.evento-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.evento-data {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgb(252, 176, 55);
+    color: #111;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.evento-data .dias {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.evento-data .mes {
+    display: block;
+    font-size: 1rem;
+    margin-top: 2px;
+    font-weight: 700;
+}
+
+.evento-conteudo {
+    padding: 16px;
+}
+
+.evento-conteudo h3 {
+    font-size: 1.6rem;
+    color: rgb(252, 176, 55);
+    margin: 0 0 15px 0;
+    font-weight: 800;
+    text-align: center;
+}
+
+.evento-descricao {
+    color: #fff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.evento-info {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: rgb(252, 176, 55);
+    font-size: 0.9rem;
+}
+
+.evento-horario::before {
+    content: "🕒";
+    margin-right: 5px;
+}
+
+.evento-local::before {
+    content: "📍";
+    margin-right: 5px;
+}
+
+.evento-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: rgb(252, 176, 55);
+    color: #111;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+}
+
+.evento-btn:hover {
+    background: #fff;
+    color: #111;
+    transform: translateY(-2px);
+}
+
+    @media (max-width: 1024px) {
+    .eventos-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+    
+    .evento-card {
+        grid-column: auto;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}/* --- Seções Somos e Ministérios --- */
+.somos-section, .ministerios-section { 
+    padding: 80px 0; 
+    text-align: center; 
+    background: linear-gradient(to bottom, 
+        rgba(17,17,17,1) 0%, 
+        rgba(17,17,17,0.9) 15%, 
+        rgba(15,15,15,0.8) 25%, 
+        #0f0f0f 35%, 
+        #0f0f0f 65%, 
+        rgba(15,15,15,0.8) 75%, 
+        rgba(17,17,17,0.9) 85%, 
+        rgba(17,17,17,1) 100%
+    );
+}
+.ministerios-section { 
+    background: linear-gradient(to bottom, 
+        rgba(17,17,17,1) 0%, 
+        rgba(17,17,17,0.9) 15%, 
+        rgba(26,26,26,0.8) 25%, 
+        #1a1a1a 35%, 
+        #1a1a1a 65%, 
+        rgba(26,26,26,0.8) 75%, 
+        rgba(17,17,17,0.9) 85%, 
+        rgba(17,17,17,1) 100%
+    );
+}
 
 .somos-section h2, .ministerios-section h2 {
     font-size: 2.7rem; font-weight: 900; text-transform: uppercase; margin: 0 0 18px 0;
+    color: #fff;
 }
-.somos-section .destaque { color: #ae3d3d; }
-.somos-section p { font-size: 1.5rem; margin-bottom: 32px; }
+.somos-section .destaque { color: rgb(252, 176, 55); }
+.somos-section p { font-size: 1.5rem; margin-bottom: 32px; color: #fff; }
 
 .somos-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; }
 .icon-placeholder {
-    width: 80px; height: 80px; background: #f3f3f3; border-radius: 50%;
+    width: 80px; height: 80px; background: #333; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    color: #ae3d3d; font-weight: 700;
+    color: rgb(252, 176, 55); font-weight: 700;
 }
 
 .ministerios-grid {
@@ -452,14 +906,14 @@ body {
     gap: 32px; margin-top: 40px;
 }
 .ministerio-card {
-    background: #fff; border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 36px 12px;
+    background: #333; border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(255,255,255,0.07); padding: 36px 12px;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
 }
-.ministerio-card:hover { transform: translateY(-5px); box-shadow: 0 6px 24px rgba(174,61,61,0.13); }
+.ministerio-card:hover { transform: translateY(-5px); box-shadow: 0 6px 24px rgba(252, 176, 55, 0.13); }
 .ministerio-card .icon-placeholder { margin-bottom: 18px; }
-.ministerio-card span { font-weight: 600; text-transform: uppercase; }
+.ministerio-card span { font-weight: 600; text-transform: uppercase; color: #fff; }
 
 /* ==========================================================================
    4. FOOTER (RODAPÉ)
@@ -469,7 +923,7 @@ footer { background: #181818; color: #fff; padding: 40px 0 20px 0; margin-top: 6
 .footer-logo { font-size: 1.7rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; }
 .footer-social { margin: 18px 0; }
 .footer-social a { color: #fff; font-size: 1rem; margin: 0 10px; text-decoration: none; }
-.footer-social a:hover { color: #ae3d3d; }
+.footer-social a:hover { color: rgb(252, 176, 55); }
 .footer-links a { color: #aaa; text-decoration: none; font-size: 0.9rem;}
 .footer-copy { margin-top: 18px; font-size: 0.9rem; color: #777; }
 
@@ -493,8 +947,24 @@ footer { background: #181818; color: #fff; padding: 40px 0 20px 0; margin-top: 6
     body { padding-top: 70px; }
     .main-navbar, .navbar-content-wrapper { height: 70px; top: 70px;}
 
+    /* Logo responsiva no mobile */
+    .navbar-logo-img {
+        height: 40px;
+    }
+
     .hero-content h1 { font-size: 2.5rem; }
     .hero-content h2 { font-size: 1.2rem; }
+    
+    /* Layout responsivo para título e logo no mobile */
+    .hero-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .logo-principal {
+        width: 150px;
+    }
     
     /* Na versão mobile, as colagens laterais são escondidas e o conteúdo da missão fica centralizado */
     .nova-section-inner {
@@ -530,7 +1000,7 @@ footer { background: #181818; color: #fff; padding: 40px 0 20px 0; margin-top: 6
 }
 
 main {
-    background: #fff;
+    background: #111;
     padding-bottom: 40px;
 }
 
@@ -556,9 +1026,9 @@ section.highlight {
     flex-wrap: wrap;
 }
 .card {
-    background: #f9f9f9;
+    background: #333;
     border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 12px rgba(255,255,255,0.07);
     padding: 30px 24px;
     flex: 1 1 300px;
     min-width: 260px;
@@ -566,7 +1036,7 @@ section.highlight {
     text-align: center;
 }
 .card h3 {
-    color: #111;
+    color: #fff;
     font-size: 1.4rem;
     margin-bottom: 10px;
 }
@@ -589,9 +1059,9 @@ section.highlight {
     max-width: 900px;
     margin: 40px auto;
     padding: 30px;
-    background: #f9f9f9;
+    background: #333;
     border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 12px rgba(255,255,255,0.07);
     text-align: center;
 }
 
@@ -665,7 +1135,16 @@ footer {
 }
 /* Consolidação dos estilos para .nova-section */
 .nova-section {
-    background: #fff;
+    background: linear-gradient(to bottom, 
+        rgba(17,17,17,1) 0%, 
+        rgba(17,17,17,0.8) 8%, 
+        rgba(255,255,255,0.9) 15%, 
+        #fff 20%, 
+        #fff 80%, 
+        rgba(255,255,255,0.9) 85%, 
+        rgba(17,17,17,0.8) 92%, 
+        rgba(17,17,17,1) 100%
+    );
     padding-top: 0px; /* Reduzi o padding superior de 60px para 20px. Você pode ajustar esse valor. */
     padding-right: 20px;
     padding-bottom: 40px;
